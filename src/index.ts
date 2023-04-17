@@ -1,6 +1,8 @@
 // src/index.ts
 import * as readlineSync from 'readline-sync';
-import { PromptTemplate, OpenAI, LLMChain } from 'langchain';
+import { PromptTemplate } from 'langchain/prompts';
+import { LLMChain } from 'langchain/chains';
+import { OpenAI } from 'langchain/llms/openai';
 
 const openai_api_key: string | undefined = process.env.OPENAI_KEY;
 

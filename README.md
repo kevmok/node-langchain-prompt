@@ -1,5 +1,6 @@
 # Node.js TypeScript Text Input and Language Model Project
 
+![Demo](gif/demo.gif)
 This project is a simple Node.js TypeScript application that prompts the user to enter text, then uses the text as input for a language model.
 
 ## Features
