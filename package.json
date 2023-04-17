@@ -1,0 +1,23 @@
+{
+  "name": "ts-langchain-prompter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.11",
+    "@types/readline-sync": "^1.4.4",
+    "langchain": "^0.0.56",
+    "openai": "^3.2.1",
+    "readline-sync": "^1.4.10",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}

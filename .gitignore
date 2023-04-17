@@ -1,0 +1,22 @@
+# Node.js dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+
+# Env
+.env
+
+# Logs
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# OS generated files
+.DS_Store
+Thumbs.db
