@@ -3,9 +3,10 @@ node_modules/
 
 # TypeScript build output
 dist/
+build/
 
 # Env
-.env
+*.env*
 
 # Logs
 *.log
