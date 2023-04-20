@@ -1,4 +1,5 @@
 import ora from 'ora';
+
 export const { log } = console;
 
 export const terminalSpinner = ora({

@@ -42,8 +42,9 @@ async function converseGPT(llm: OpenAI) {
       log(chalk.green('Goodbye!'));
       break;
     }
-
+    terminalSpinner.start();
     const { response } = await chain.call({ input });
+    terminalSpinner.stop();
     log(chalk.green('AI: ', response));
   }
 }
