@@ -1,5 +1,5 @@
-import ora from 'ora';
 import chalk from 'chalk';
+import ora from 'ora';
 import * as readlineSync from 'readline-sync';
 
 export const { log } = console;

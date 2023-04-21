@@ -1,16 +1,17 @@
-import { PDFLoader } from 'langchain/document_loaders/fs/pdf';
-import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
-import { Chroma } from 'langchain/vectorstores/chroma';
 import chalk from 'chalk';
-import { OpenAI } from 'langchain/llms/openai';
 import {
+  ConversationChain,
   LLMChain,
   loadQAStuffChain,
-  ConversationChain,
 } from 'langchain/chains';
-import { PromptTemplate } from 'langchain/prompts';
+import { PDFLoader } from 'langchain/document_loaders/fs/pdf';
+import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
+import { OpenAI } from 'langchain/llms/openai';
 import { BufferMemory } from 'langchain/memory';
-import { promptUser, log, terminalSpinner } from '../utils/index.js';
+import { PromptTemplate } from 'langchain/prompts';
+import { Chroma } from 'langchain/vectorstores/chroma';
+
+import { log, promptUser, terminalSpinner } from '../utils/index.js';
 
 const embeddings = new OpenAIEmbeddings({
   openAIApiKey: process.env.OPENAI_KEY,

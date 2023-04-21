@@ -1,6 +1,7 @@
 import chalk from 'chalk';
-import { OpenAI } from 'langchain/llms/openai';
 import { askGPT, converseGPT, pdfLoader } from 'common/functions/gpt.js';
+import { OpenAI } from 'langchain/llms/openai';
+
 import { log } from './index.js';
 
 type MenuOption = {

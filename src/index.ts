@@ -1,7 +1,8 @@
-import * as dotenv from 'dotenv';
 import chalk from 'chalk';
-import { OpenAI } from 'langchain/llms/openai';
 import { menuOptions, printMenu } from 'common/utils/menu.js';
+import * as dotenv from 'dotenv';
+import { OpenAI } from 'langchain/llms/openai';
+
 import { log, promptUser } from './common/utils/index.js';
 
 dotenv.config();
@@ -24,31 +25,6 @@ async function main() {
       log(chalk.red('Invalid selection, please try again.'));
     }
   }
-  // log(
-  //   chalk.underline('Select an option:\n') +
-  //     chalk.bold.cyan('  1. Ask GPT a question\n') +
-  //     chalk.bold.greenBright('  2. Converse with GPT\n') +
-  //     chalk.bold.red('  3. Read paper\n') +
-  //     chalk.bold.red('  4. Exit\n')
-  // );
-  // while (true) {
-  //   const userChoice = promptUser('Select an option: ');
-  //   switch (userChoice) {
-  //     case '1':
-  //       await askGPT(llm);
-  //       process.exit(0);
-  //     case '2':
-  //       await converseGPT(llm);
-  //       process.exit(0);
-  //     case '3':
-  //       await pdfLoader(llm);
-  //       process.exit(0);
-  //     case '4':
-  //       process.exit(0);
-  //     default:
-  //       log(chalk.red('Invalid selection, please try again.'));
-  //   }
-  // }
 }
 
 main();
