@@ -5,8 +5,11 @@ node_modules/
 dist/
 build/
 
+# PDF
+src/pdfs/*.pdf
+
 # Env
-*.env*
+.env
 
 # Logs
 *.log
