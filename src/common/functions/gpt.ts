@@ -9,7 +9,7 @@ import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
 import { OpenAI } from 'langchain/llms/openai';
 import { BufferMemory } from 'langchain/memory';
 import { PromptTemplate } from 'langchain/prompts';
-import { Chroma } from 'langchain/vectorstores/chroma';
+import { HNSWLib } from 'langchain/vectorstores/hnswlib';
 
 import { log, promptUser, terminalSpinner } from '../utils/index.js';
 
@@ -18,25 +18,20 @@ const embeddings = new OpenAIEmbeddings({
 });
 
 export async function pdfLoader(llm: OpenAI) {
-  const loader = new PDFLoader('src/pdfs/SOP.pdf');
-  log(loader);
+  const loader = new PDFLoader('src/pdfs/Insurance.pdf');
   const docs = await loader.load();
-  log(docs);
-  const vectorStore = await Chroma.fromDocuments(docs, embeddings, {
-    collectionName: 'AITA',
-  });
-  await vectorStore.ensureCollection();
+  const vectorStore = await HNSWLib.fromDocuments(docs, embeddings);
 
   const userInput = promptUser('What would like to look into: ');
-  const resultDocs = vectorStore.similaritySearch(userInput);
+  const resultDocs = await vectorStore.similaritySearch(userInput);
 
   const chain = loadQAStuffChain(llm);
 
-  const { result } = await chain.call({
+  const { text } = await chain.call({
     input_documents: resultDocs,
     question: userInput,
   });
-  log(chalk.greenBright(result));
+  log(chalk.greenBright(text));
 }
 
 export async function askGPT(llm: OpenAI) {
